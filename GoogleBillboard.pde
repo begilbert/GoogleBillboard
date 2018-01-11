@@ -6,9 +6,17 @@ public void setup()  {
   for (int x = 2; x < e.length() - 10; x++) {
     digits = e.substring(x, x + 10);
     dNum = Double.parseDouble(digits);
-    System.out.println(dNum);
+    checker = true;
+    for (int i = 2; i <= (int)Math.sqrt(dNum); i++) {
+      if (dNum % i == 0) {
+        checker = false;
+      }
+    }
+    if (checker) {
+      System.out.println(dNum);
+    }
   }
-}  
+}
 public void draw()  
 {   
   //not needed for this assignment
